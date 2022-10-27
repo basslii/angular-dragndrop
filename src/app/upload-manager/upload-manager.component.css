@@ -1,0 +1,39 @@
+.drag-area {
+    background-image: url("../../assets/folder-upload.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-weight: 200;
+    height: 300px;
+    border: 5px solid black;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(8, 73, 16);
+}
+
+.drag-area.hovering {
+    border: 5px dashed green;
+}
+
+.drag-area input[type="file"] {
+    /* width: 1920px;
+    height: 320px; */
+    opacity: 0;
+}
+
+.file-container {
+    width: 650px;
+    padding: 30px;
+    background: linear-gradient(45deg, #c2e7fe, transparent);
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,52 @@
+
+<ng-container>
+    <div class="row">
+        <div class="col">
+            <input type="checkbox" (change)="testcheckbox" #testcheckbox>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="testcheckbox.checked">
+    <div class="row">
+        <div class="col">
+            <div class="file-container">
+                <div class="drag-area" dropzone (hovered)="toggleHover($event)" (dropped)="GetDisabilityCertFile($event)" [class.hovering]="isHovering">
+                    <!-- <h3>Drag & Drop Files Here</h3> -->
+                
+                    <div>
+                        <label>
+                            <input type="file" accept='.pdf' name="avatar" id="avatar" #avatar (change)="GetDisabilityCertFile($any($event).target.files)">
+                        </label>
+                    </div>
+                </div>
+                <!-- <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary" (click)="$any($event).target.files = undefined; cleardisabilitycontainer()">Clear File</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    
+</ng-container>
+
+<ng-container>
+    <div class="row">
+        <div class="col">
+            <table>
+                <thead>
+                    <th>
+                        <label>Disability Certifications</label>
+                    </th>
+                </thead>
+                <tbody>
+                    <td *ngFor="let file of files" style="display: flex; flex-direction: column">
+                        <li>File Name: {{file.name}}
+                    </td>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</ng-container>
